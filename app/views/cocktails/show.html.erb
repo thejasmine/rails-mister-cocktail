@@ -1,0 +1,17 @@
+<h1>Cocktail details</h1>
+Name :<%= @cocktail.name%>
+<% if @cocktail.doses.any? %>
+  <ul>
+    <% @cocktail.doses.each do |doses| %>
+      <li>
+        <%= doses.description %>
+      </li>
+      <li>
+        <%= doses.ingredient_id %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No doses yet</p>
+<% end %>
+<%= link_to "Add a dose", new_cocktail_dose_path(@cocktail)  %>
