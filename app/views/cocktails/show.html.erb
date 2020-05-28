@@ -2,12 +2,9 @@
 Name :<%= @cocktail.name%>
 <% if @cocktail.doses.any? %>
   <ul>
-    <% @cocktail.doses.each do |doses| %>
+    <% @cocktail.doses.each do |dose| %>
       <li>
-        <%= doses.description %>
-      </li>
-      <li>
-        <%= doses.ingredient_id %>
+        <%= dose.description %> | <%= dose.ingredient.name %> | <%= link_to "Delete a dose", dose_path(dose) , method: :delete, data: {confirm: "Are you sure??"} %>
       </li>
     <% end %>
   </ul>
@@ -15,3 +12,4 @@ Name :<%= @cocktail.name%>
   <p>No doses yet</p>
 <% end %>
 <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail)  %>
+<%= link_to 'Back to Main', cocktails_path %>

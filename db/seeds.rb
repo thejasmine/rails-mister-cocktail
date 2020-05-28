@@ -4,22 +4,21 @@ Cocktail.destroy_all if Rails.env.development?
 Ingredient.destroy_all if Rails.env.development?
 Dose.destroy_all if Rails.env.development?
 
-def read_ingredient
-  response = open("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list")
-  json = JSON.parse(response.read)
-  new_hash = json['drinks']
-  new_hash.each do |item|
-    Ingredient.create!(name: item['strIngredient1'])
+list = "https://raw.githubusercontent.com/maltyeva/iba-cocktails/master/recipes.json"
+def fetch(url)
+  data_serialized = open(url).read
+  return JSON.parse(data_serialized)
+end
+cocktails = fetch(list)
+cocktails.each do |cocktail|
+  c = Cocktail.create!(name: cocktail['name'])
+  cocktail['ingredients'].each do |ingredient|
+    i = Ingredient.find_or_create_by(
+    name: ingredient['ingredient'])
+    d = Dose.create(cocktail: c, ingredient: i, description: "#{ingredient['amount'.to_s]} #{ingredient['unit']}")
   end
 end
 
-# Ingredient.create(name: "lemon")
-# Ingredient.create(name: "ice")
-# Ingredient.create(name: "mint leaves")
-
-Cocktail.create!(name: "Mojito")
-Cocktail.create!(name:"Long Island Iced Tea")
-Cocktail.create!(name:"Daiquiri")
 
 
-read_ingredient
+# pre = Cocktail.create!(preparation: cocktail['preparation'])
