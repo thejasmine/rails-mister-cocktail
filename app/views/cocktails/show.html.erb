@@ -1,5 +1,6 @@
 <h1>Cocktail details</h1>
 Name :<%= @cocktail.name%>
+<%= @cocktail.photo.attached? ? (cl_image_tag @cocktail.photo.key) : (image_tag 'cocktail.jpeg') %>
 <% if @cocktail.doses.any? %>
   <ul>
     <% @cocktail.doses.each do |dose| %>

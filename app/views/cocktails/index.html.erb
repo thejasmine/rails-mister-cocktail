@@ -1,5 +1,8 @@
-<!-- mycode -->
-<%= link_to 'Add new Cocktail🍹', new_cocktail_path %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1462539405390-d0bdb635c7d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1393&q=80);">
+  <div class="container">
+    <h1>Find All🥃 </h1>
+  </div>
+</div>
 <% @cocktails.each do |cocktail|%>
   <ul>
     <li><%=cocktail.name%> |   <%= link_to 'Show', cocktail %></li>
