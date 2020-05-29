@@ -12,3 +12,16 @@
 @import "components/index";
 @import "pages/index";
 
+//font
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Playfair+Display:wght@500&display=swap');
+
+
+body {
+font-family: 'Oswald', sans-serif;
+font-family: 'Playfair Display', serif;
+background-color: $bg
+}
+
+.container-card{
+  margin: 20px;
+}

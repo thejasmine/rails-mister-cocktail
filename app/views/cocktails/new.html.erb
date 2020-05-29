@@ -1,10 +1,20 @@
-<h1>Add new cocktails</h1>
-<%= simple_form_for(@cocktail) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :name %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1514361892635-6b07e31e75f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);">
+  <div class="container">
+    <h1>Add new cocktails</h1>
   </div>
-  <div class="form-actions">
-    <%= f.button :submit %>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 offset-sm-2 my-2">
+      <%= simple_form_for(@cocktail) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :name %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit %>
+        </div>
+        <%= link_to 'Back to Main', cocktails_path %>
+      <% end %>
+    </div>
   </div>
-<% end %>
-<%= link_to 'Back to Main', cocktails_path %>
+</div>

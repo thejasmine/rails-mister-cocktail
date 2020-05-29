@@ -19,6 +19,15 @@ class CocktailsController < ApplicationController
       render :new
     end
   end
+
+  def filter
+    @ingredient = Ingredient.find_by(name: params[:ingredient])
+    @cocktail = @ingredient.cocktails
+  end
+
+
+
+
   private
 
   def cocktail_params

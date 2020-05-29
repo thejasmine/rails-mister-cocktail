@@ -1,0 +1,11 @@
+<h3>Find 🥃 <%= @ingredient.name %></h3>
+<div class="container">
+  <div class="row">
+    <div class="filter-card"></div>
+    <% @ingredient.cocktails.each do |cocktail|%>
+      <p><%= cocktail.name  %></p>
+    <% end%>
+  </div>
+</div>
+</div>
+<%= link_to 'Back to Main', cocktails_path %>
