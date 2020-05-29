@@ -25,9 +25,6 @@ class CocktailsController < ApplicationController
     @cocktail = @ingredient.cocktails
   end
 
-
-
-
   private
 
   def cocktail_params
