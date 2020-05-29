@@ -7,11 +7,19 @@
     <%= f.submit "Search", class: "btn btn-dark" %>
   <% end %>
 </div>
-<% @cocktails.each do |cocktail|%>
-  <ul>
-    <li><%=cocktail.name%> |   <%= link_to 'Show', cocktail %></li>
-    <% cocktail.doses.each do |dose| %>
-      <li> <%= dose.description%> - <%= link_to dose.ingredient.name, filter_cocktails_path(ingredient: dose.ingredient.name)%>  </li>
-    <% end %>
-  </ul>
-<% end %>
+<div class="container">
+  <div class="row my-3">
+    <div class="filter-cards">
+      <% @cocktails.each do |cocktail|%>
+        <div class="filter-item">
+          <ul style="list-style-type:none;">
+            <li style="list-style-type:none;"><%=cocktail.name%> |   <%= link_to 'Show', cocktail %></li>
+            <% cocktail.doses.each do |dose| %>
+              <li> <%= dose.description%> - <%= link_to dose.ingredient.name, filter_cocktails_path(ingredient: dose.ingredient.name)%>  </li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
