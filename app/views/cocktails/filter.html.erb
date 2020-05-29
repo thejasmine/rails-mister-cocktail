@@ -4,11 +4,13 @@
   </div>
 </div>
 <div class="container">
-  <div class="row">
-    <div class="filter-card"></div>
-    <% @ingredient.cocktails.each do |cocktail|%>
-      <p><%= link_to cocktail.name, cocktail %></p>
-    <% end%>
+  <div class="row my-3">
+    <div class="col-xs-12 col-sm-6 text-white text-decoration-none">
+      <div class="filter-card">
+        <% @ingredient.cocktails.each do |cocktail|%>
+          <div class="filter-item" style="padding:20px;"><%= link_to cocktail.name, cocktail %></div>
+        <% end%>
+      </div>
+    </div>
   </div>
-</div>
 </div>
