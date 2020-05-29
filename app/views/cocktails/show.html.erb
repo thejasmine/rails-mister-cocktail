@@ -4,7 +4,7 @@
   </div>
 </div>
 <div class="card-product">
-  <%= @cocktail.photo.attached? ? (cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill) : (image_tag 'cocktail.jpeg', height: 200, width: 300) %>
+  <%= @cocktail.photo.attached? ? (cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill) : (image_tag 'cocktail.jpg', height: 200, width: 300) %>
   <div class="card-product-infos">
     <% if @cocktail.doses.any? %>
       <ul>
