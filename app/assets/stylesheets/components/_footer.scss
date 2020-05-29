@@ -1,0 +1,24 @@
+.footer {
+  background-color:$pink;
+  text-align: center;
+  height: 100px;
+  padding:4px;
+  }
+
+.footer ul {
+  list-style-type: none;
+  padding:0;
+}
+
+.footer ul li {
+  display: inline;
+}
+
+.footer li a {
+  color:#C9ADA7;
+  font-size: 32px;
+}
+
+.footer ul li:hover{
+  color: white;
+}
