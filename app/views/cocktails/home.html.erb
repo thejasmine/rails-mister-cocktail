@@ -3,7 +3,10 @@
   <div class="container">
     <h1>Find 🍷🥂🥃 for 👱🏼‍♀️👩🏼‍🦰🧑🏽 night✨</h1>
     <p>It's beginning to look a lot like cocktails🌹</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
+    <%= simple_form_for :search, url: cocktails_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+      <%= f.input :name, input_html: {value: ""} %>
+      <%= f.submit "Search", class: "btn btn-dark" %>
+    <% end %>
   </div>
 </div>
 <!-- card-category -->
@@ -15,7 +18,7 @@
       </div>
     </div>
     <div class="col-xs-12 col-sm-6">
-      <div class="card-category text-white text-decoration-none" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1453825012366-3738046cb6c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
+      <div class="card-category text-white text-decoration-none" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1539112373701-6fc43d90f569?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
         <%= link_to "Gin", filter_cocktails_path(ingredient: 'Gin')%>
       </div>
     </div>

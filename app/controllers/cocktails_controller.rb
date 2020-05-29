@@ -1,6 +1,11 @@
 class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail.all.order(name: :asc)
+    @search = params["search"]
+    if @search.present?
+      @name = @search["name"]
+      @cocktails = Cocktail.where(name: @name)
+    end
   end
 
   def show

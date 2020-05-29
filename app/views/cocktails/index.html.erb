@@ -2,6 +2,10 @@
   <div class="container">
     <h1>Find All🥃 </h1>
   </div>
+  <%= simple_form_for :search, url: cocktails_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+    <%= f.input :name, input_html: {value: ""} %>
+    <%= f.submit "Search", class: "btn btn-dark" %>
+  <% end %>
 </div>
 <% @cocktails.each do |cocktail|%>
   <ul>
