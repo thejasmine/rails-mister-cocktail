@@ -11,14 +11,10 @@ def fetch(url)
 end
 cocktails = fetch(list)
 cocktails.each do |cocktail|
-  c = Cocktail.create!(name: cocktail['name'])
+  c = Cocktail.create!(name: cocktail['name'],preparation: cocktail['preparation'])
   cocktail['ingredients'].each do |ingredient|
     i = Ingredient.find_or_create_by(
     name: ingredient['ingredient'])
     d = Dose.create(cocktail: c, ingredient: i, description: "#{ingredient['amount'.to_s]} #{ingredient['unit']}")
   end
 end
-
-
-
-# pre = Cocktail.create!(preparation: cocktail['preparation'])
